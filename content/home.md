@@ -11,6 +11,8 @@ cats:
 ---
 ![](public/img/75f352ee-5484-4422-ab63-3da41c9f8b47.jpg "gtoiamge")
 
+![cat gif pixel](img/cat.gif "The cat")
+
 Welcome to my awesome page about cats of the internet.
 
 This page is built with NextJS, and content is managed in Decap CM\
