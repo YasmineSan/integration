@@ -9,7 +9,7 @@ export default function HomePage() {
         <meta name="description" content="This is a static homepage." />
       </Head>
       <header>
-        <h1 className="text-red">Welcome to My Static Homepage</h1>
+        <h1 className="text-green-500">Welcome to My Static Homepage</h1>
       </header>
       <main>
         <p>This content is not editable through the CMS.</p>
