@@ -9,4 +9,13 @@ module.exports = {
     });
     return cfg;
   },
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/home",
+        permanent: true,
+      },
+    ];
+  },
 };
