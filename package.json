@@ -1,0 +1,27 @@
+{
+  "name": "integration",
+  "version": "1.0.0",
+  "description": "tets d'integration cms",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "npm run build && next export"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "next": "^14.2.5",
+    "next-mdx-remote": "^5.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-react": "^7.24.7",
+    "frontmatter-markdown-loader": "^3.7.0"
+  }
+}
