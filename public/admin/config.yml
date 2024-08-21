@@ -18,8 +18,5 @@ collections:
             name: "cats"
             widget: list
             fields:
-            - label: "Image"
-                name: "image"
-                widget: "image"
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
