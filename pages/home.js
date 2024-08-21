@@ -1,22 +1,12 @@
 import Head from "next/head";
 import React from "react";
 
+// pages/home.js
 export default function HomePage() {
   return (
-    <div>
-      <Head>
-        <title>My Static Homepage</title>
-        <meta name="description" content="This is a static homepage." />
-      </Head>
-      <header>
-        <h1 className="text-green-500">Welcome to My Static Homepage</h1>
-      </header>
-      <main>
-        <p>This content is not editable through the CMS.</p>
-      </main>
-      <footer>
-        <p>© 2023 My Website. All rights reserved.</p>
-      </footer>
+    <div className="bg-blue-500 text-white p-6">
+      <h1 className="text-4xl font-bold">Welcome to My Static Homepage</h1>
+      <p className="mt-4">This content is not editable through the CMS.</p>
     </div>
   );
 }
