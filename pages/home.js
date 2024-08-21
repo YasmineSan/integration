@@ -1,12 +1,37 @@
-import Head from "next/head";
+import Link from "next/link";
 import React from "react";
 
-// pages/home.js
 export default function HomePage() {
   return (
-    <div className="bg-blue-500 text-white p-6">
-      <h1 className="text-4xl font-bold">Welcome to My Static Homepage</h1>
-      <p className="mt-4">This content is not editable through the CMS.</p>
+    <div>
+      <nav className="bg-gray-800 p-4">
+        <ul className="flex space-x-4">
+          <li>
+            <a href="/" className="text-white">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="/blog" className="text-white">
+              Blog
+            </a>
+          </li>
+          <li>
+            <a href="/contact" className="text-white">
+              Contact
+            </a>
+          </li>
+          <li>
+            <a href="/something" className="text-white">
+              Something
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div className="bg-blue-500 text-white p-6">
+        <h1 className="text-4xl font-bold">Welcome to My Static Homepage</h1>
+        <p className="mt-4">This content is not editable through the CMS.</p>
+      </div>
     </div>
   );
 }
