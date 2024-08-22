@@ -7,7 +7,7 @@ export default function HomePage() {
       <nav className="bg-gray-800 p-4">
         <ul className="flex space-x-4">
           <li>
-            <a href="/" className="text-white">
+            <a href="/home" className="text-white">
               Home
             </a>
           </li>
