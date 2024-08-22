@@ -1,7 +1,7 @@
 ---
-title: "First Blog Post"
-date: "2024-08-21"
-summary: "This is a summary of the first blog post."
+title: "la première page du blog "
+date: 2024-08-21
+summary: "J'aimerais faire les tests de modifcations de blog "
+image: /img/stairway.webp
 ---
-
-This is the detailed content of the first blog post.
+voici le contenu du blog on va essayer de blablabla , pendant quelque ligne sjuste pour test donc tu vois .
