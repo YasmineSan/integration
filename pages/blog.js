@@ -7,48 +7,37 @@ import React from "react";
 
 // Fonction pour récupérer les articles de blog
 export async function getStaticProps() {
-  console.log("getStaticProps called");
+  const files = fs.readdirSync(path.join("content/blog"));
 
-  try {
-    const files = fs.readdirSync(path.join("content/blog"));
-    console.log("Files found:", files);
+  const posts = files.map((filename) => {
+    const markdownWithMeta = fs.readFileSync(
+      path.join("content/blog", filename),
+      "utf-8"
+    );
 
-    const posts = files.map((filename) => {
-      const markdownWithMeta = fs.readFileSync(
-        path.join("content/blog", filename),
-        "utf-8"
-      );
-      console.log("File content:", markdownWithMeta);
-
-      const { data: frontmatter } = matter(markdownWithMeta);
-      console.log("Frontmatter:", frontmatter);
-
-      // Convertir la date en chaîne de caractères
-      if (frontmatter.date) {
-        frontmatter.date = frontmatter.date.toISOString();
-      }
-
-      return {
-        frontmatter,
-        slug: filename.split(".")[0],
-      };
-    });
-
-    console.log("Posts:", posts);
+    const { data: frontmatter } = matter(markdownWithMeta);
 
     return {
-      props: {
-        posts,
+      frontmatter: {
+        ...frontmatter,
+        date: new Date(frontmatter.date), // Convertir la date en objet Date
       },
+      slug: filename.split(".")[0],
     };
-  } catch (error) {
-    console.error("Error reading files:", error);
-    return {
-      props: {
-        posts: [],
-      },
-    };
-  }
+  });
+
+  // Trier les posts du plus récent au plus ancien
+  posts.sort((a, b) => {
+    const dateA = new Date(a.frontmatter.date).getTime();
+    const dateB = new Date(b.frontmatter.date).getTime();
+    return dateB - dateA;
+  });
+
+  return {
+    props: {
+      posts,
+    },
+  };
 }
 
 export default function BlogPage({ posts }) {
