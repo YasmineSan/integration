@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import React from "react";
 import Image from "next/image";
+import ReactMarkdown from "react-markdown"; // Importer ReactMarkdown
 
 // Fonction pour récupérer les chemins de tous les articles de blog
 export async function getStaticPaths() {
@@ -27,11 +28,17 @@ export async function getStaticProps({ params: { id } }) {
 
   const { data: frontmatter, content } = matter(markdownWithMeta);
 
+  // Si la date n'est pas déjà une chaîne de caractères, on la convertit
+  const date =
+    typeof frontmatter.date === "string"
+      ? frontmatter.date
+      : frontmatter.date.toISOString();
+
   return {
     props: {
       frontmatter: {
         ...frontmatter,
-        date: frontmatter.date.toISOString(), // Convertir la date en chaîne de caractères
+        date, // Utilisation de la date corrigée
       },
       content,
     },
@@ -52,7 +59,8 @@ export default function BlogPostPage({ frontmatter, content }) {
         />
       )}
       <div className="prose max-w-none">
-        <p>{content}</p>
+        <ReactMarkdown>{content}</ReactMarkdown>{" "}
+        {/* Utiliser ReactMarkdown pour rendre le contenu */}
       </div>
     </div>
   );
