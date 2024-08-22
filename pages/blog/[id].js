@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 // Fonction pour récupérer les données de chaque article de blog
 export async function getStaticProps({ params: { id } }) {
   const markdownWithMeta = fs.readFileSync(
-    path.join("content/blog", id + ".md"),
+    path.join("content/blog", `${id}.md`),
     "utf-8"
   );
 
@@ -28,7 +28,10 @@ export async function getStaticProps({ params: { id } }) {
 
   return {
     props: {
-      frontmatter,
+      frontmatter: {
+        ...frontmatter,
+        date: frontmatter.date.toISOString(), // Convertir la date en chaîne de caractères
+      },
       content,
     },
   };

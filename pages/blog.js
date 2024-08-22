@@ -23,6 +23,11 @@ export async function getStaticProps() {
       const { data: frontmatter } = matter(markdownWithMeta);
       console.log("Frontmatter:", frontmatter);
 
+      // Convertir la date en chaîne de caractères
+      if (frontmatter.date) {
+        frontmatter.date = frontmatter.date.toISOString();
+      }
+
       return {
         frontmatter,
         slug: filename.split(".")[0],
