@@ -1,40 +1,84 @@
-// pages/blog.js
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 
-const blogPosts = [
-  {
-    id: "1",
-    title: "First Blog Post",
-    description: "This is a summary of the first blog post.",
-  },
-  {
-    id: "2",
-    title: "Second Blog Post",
-    description: "This is a summary of the second blog post.",
-  },
-  // Ajoute d'autres articles ici...
-];
+// Fonction pour récupérer les articles de blog
+export async function getStaticProps() {
+  console.log("getStaticProps called");
 
-export default function BlogPage() {
+  try {
+    const files = fs.readdirSync(path.join("content/blog"));
+    console.log("Files found:", files);
+
+    const posts = files.map((filename) => {
+      const markdownWithMeta = fs.readFileSync(
+        path.join("content/blog", filename),
+        "utf-8"
+      );
+      console.log("File content:", markdownWithMeta);
+
+      const { data: frontmatter } = matter(markdownWithMeta);
+      console.log("Frontmatter:", frontmatter);
+
+      return {
+        frontmatter,
+        slug: filename.split(".")[0],
+      };
+    });
+
+    console.log("Posts:", posts);
+
+    return {
+      props: {
+        posts,
+      },
+    };
+  } catch (error) {
+    console.error("Error reading files:", error);
+    return {
+      props: {
+        posts: [],
+      },
+    };
+  }
+}
+
+export default function BlogPage({ posts }) {
   return (
     <div className="p-6">
       <h1 className="text-4xl font-bold mb-6">Blog</h1>
-      <ul>
-        {blogPosts.map((post) => (
-          <li key={post.id} className="mb-4">
-            <h2 className="text-2xl font-semibold">
-              <a
-                href="href={`/blog/${post.id}`}"
-                className="text-blue-500 hover:underline"
-              >
-                {post.title}
-              </a>
-            </h2>
-            <p>{post.description}</p>
-          </li>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {posts.map(({ slug, frontmatter }) => (
+          <div
+            key={slug}
+            className="bg-white rounded-lg shadow-md overflow-hidden"
+          >
+            {frontmatter.image && (
+              <Image
+                src={frontmatter.image}
+                alt={frontmatter.title}
+                width={400}
+                height={250}
+                className="object-cover w-full"
+              />
+            )}
+            <div className="p-4">
+              <h2 className="text-2xl font-semibold">
+                <a
+                  href={`/blog/${slug}`}
+                  className="text-blue-500 hover:underline"
+                >
+                  {frontmatter.title}
+                </a>
+              </h2>
+              <p className="mt-2 text-gray-600">{frontmatter.summary}</p>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
