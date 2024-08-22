@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import React from "react";
+import Image from "next/image";
 
 // Fonction pour récupérer les chemins de tous les articles de blog
 export async function getStaticPaths() {
@@ -41,7 +42,18 @@ export default function BlogPostPage({ frontmatter, content }) {
   return (
     <div className="p-6">
       <h1 className="text-4xl font-bold mb-6">{frontmatter.title}</h1>
-      <p>{content}</p>
+      {frontmatter.image && (
+        <Image
+          src={frontmatter.image}
+          alt={frontmatter.title}
+          width={800}
+          height={450}
+          className="object-cover w-full mb-6"
+        />
+      )}
+      <div className="prose max-w-none">
+        <p>{content}</p>
+      </div>
     </div>
   );
 }
