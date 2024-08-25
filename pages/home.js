@@ -23,7 +23,7 @@ export default function HomePage() {
             </a>
           </li>
           <li>
-            <a href="/test" className="text-white">
+            <a href="/_test" className="text-white">
               test
             </a>
           </li>
