@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
+
 export default function HomePage() {
   return (
     <div>
@@ -22,8 +23,8 @@ export default function HomePage() {
             </a>
           </li>
           <li>
-            <a href="/something" className="text-white">
-              Something
+            <a href="/test" className="text-white">
+              test
             </a>
           </li>
         </ul>
@@ -32,6 +33,8 @@ export default function HomePage() {
         <h1 className="text-4xl font-bold">Welcome to My Static Homepage</h1>
         <p className="mt-4">This content is not editable through the CMS.</p>
       </div>
+      
     </div>
+    
   );
 }
