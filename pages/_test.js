@@ -17,7 +17,7 @@ export default function ParallaxFooter() {
   return (
     <footer
       ref={footerRef}
-      className="relative h-screen flex flex-col justify-end items-center overflow-hidden"
+      className="relative h-64 flex flex-col justify-end items-center overflow-hidden"
       style={{ backgroundColor: "#f8b400" }} // Couleur de la bière
     >
       <div
@@ -38,8 +38,38 @@ export default function ParallaxFooter() {
         <div class="bubble"></div>
         <div class="bubble"></div>
         <div class="bubble"></div>
-            <div class="bubble"></div>
-        </div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
 
       <div className="relative z-10 text-center p-4">
         <h2 className="text-2xl font-bold text-black">Merci de nous avoir visités !</h2>
