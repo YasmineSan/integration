@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
       kameron: ['Kameron', 'serif'],
+      dancing: ['"Dancing Script"', 'cursive'],
     },},
   },
   plugins: [],
