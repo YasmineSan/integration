@@ -133,16 +133,6 @@
       opacity: 0;
     }
   }
-  /* contour des lettre de la banner homePage */
-  .text-with-border {
-    color: white; /* Couleur du texte */
-    font-size: 3rem; /* Taille du texte */
-    font-weight: bold; /* Poids du texte */
-    text-shadow:
-      -2px -2px 0 #000,  
-      2px -2px 0 #000,
-      -2px 2px 0 #000,
-      2px 2px 0 #000; /* Ombre autour du texte simulant une bordure */
-  }
+  
   
   

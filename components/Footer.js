@@ -68,10 +68,10 @@ export default function Footer() {
         <div className="bubble"></div>
       </div>
 
-      <div className="relative z-10 text-center p-4">
+      {/* <div className="relative z-10 text-center p-4">
         <h2 className="text-2xl font-bold text-black">Merci de nous avoir visités !</h2>
         <p className="text-black">Profitez bien de notre site et de nos produits.</p>
-      </div>
+      </div> */}
     </footer>
   );
 }

@@ -19,6 +19,11 @@ export default function Shop() {
             imageUrl="\img\top-view-beer-frame-with-copy-space.jpg"
             gradientColors={['#ffffff', '#000000']}
           />
+          <BeerHighlight
+            beerName="L'alternative"
+            imageUrl="\img\Idée 1biere.png"
+            gradientColors={['#3D7C0C', '#BBBF03']}
+          />
         </div>
     </div>
   )
