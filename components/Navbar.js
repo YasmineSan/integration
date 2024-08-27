@@ -45,7 +45,7 @@ export default function Navbar() {
         <a href="/_test" className="text-black">
           Test
         </a>
-        <a href="/pote_beer" className="text-black">
+        <a href="/poteBeer" className="text-black">
           La bière des potes
         </a>
       </div>
@@ -65,7 +65,7 @@ export default function Navbar() {
     <a href="/_test" className="block text-black border-b-2 border-b-gray-500">
       Test
     </a>
-    <a href="/pote_beer" className="block text-black border-b-2 border-b-gray-500">
+    <a href="/poteBeer" className="block text-black border-b-2 border-b-gray-500">
       La bière des potes
     </a>
   </div>

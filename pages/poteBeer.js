@@ -2,7 +2,7 @@
 import Navbar from "../components/Navbar"; 
  
 
-export default function pote_beer() {
+export default function PoteBeer() {
 return (
     <div>
       
