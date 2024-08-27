@@ -53,8 +53,8 @@ export default function Navbar() {
       {/* Menu Mobile */}
 {isOpen && (
   <div className="sm:hidden font-kameron bg-white bg-opacity-75 absolute top-full left-0 w-full p-4 space-y-2 z-50 ">
-    <a href="/home" className="block text-black border-b-2 border-b-gray-500">
-      Home
+    <a href="/shop" className="block text-black border-b-2 border-b-gray-500">
+      Shop
     </a>
     <a href="/blog" className="block text-black border-b-2 border-b-gray-500">
       Blog

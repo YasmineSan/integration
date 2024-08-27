@@ -2,6 +2,7 @@ import { useState } from "react";
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import BeerHighlight from "../components/BeerHighlight";
 
 export default function HomePage() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +27,13 @@ export default function HomePage() {
       Laissons fleurir nos rêves.
     </h2>
   </div>
-
+  <div className="p-4">
+      <BeerHighlight
+        beerName="Floribière -  Souvenir"
+        imageUrl="\img\453505478_122186157674024765_6170764990246105489_n.jpg"
+        gradientColors={['#FB0303', '#950202']}
+      />
+    </div>
 
       <div className="bg-blue-500 text-white p-6">
         <h1 className="text-4xl font-bold">Welcome to My Static Homepage</h1>

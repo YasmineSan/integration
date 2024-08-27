@@ -7,6 +7,10 @@ module.exports = {
   
   theme: {
     extend: {
+      colors: {
+        'flori-red': '#FB0303',
+        'flori-dark-red': '#950202',
+      },
       fontFamily: {
       kameron: ['Kameron', 'serif'],
       dancing: ['"Dancing Script"', 'cursive'],
