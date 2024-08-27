@@ -19,7 +19,7 @@ export default function HomePage() {
   <img
     src="https://scontent.fbru2-1.fna.fbcdn.net/v/t39.30808-6/438906167_122169957182024765_3362404178392777280_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=nMebbGTWM7cQ7kNvgHjd6Zt&_nc_ht=scontent.fbru2-1.fna&oh=00_AYAsOOSEpl3RZrW8Ng8C3dzKAVlRZ0y4wWjhPXET8_b27g&oe=66D2B948"
     alt="Laissons fleurir nos bières"
-    className="w-full h-auto"
+    className="w-full h-screen"
   />
   
 </div>

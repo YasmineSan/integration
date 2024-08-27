@@ -6,7 +6,7 @@ export default function Shop() {
   return (
     <div className="py-4">
       <Navbar />
-      <img src="/img/top-view-beer-frame-with-copy-space.jpg" alt="Shop background" />
+      {/* <img src="/img/top-view-beer-frame-with-copy-space.jpg" alt="Shop background" /> */}
       <h1 className="font-kameron text-4xl sm:text-xs text-center my-8">Shop</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <BeerCard
