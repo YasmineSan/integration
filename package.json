@@ -2,7 +2,7 @@
   "name": "integration",
   "version": "1.0.0",
   "description": "tets d'integration cms",
-  "main": "index.js",
+  "main": "home.js",
   "scripts": {
     "dev": "next",
     "build": "next build",
