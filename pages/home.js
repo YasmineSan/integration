@@ -3,6 +3,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import BeerHighlight from "../components/BeerHighlight";
+import Hero from "../components/Hero";
 
 export default function HomePage() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,6 +31,7 @@ export default function HomePage() {
           Laissons fleurir nos rêves.
         </h2>
       </div>
+      <Hero />
       <div className="p-4">
         <BeerHighlight
           beerName="Floribière -  Souvenir"
