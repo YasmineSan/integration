@@ -1,77 +1,55 @@
-import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import React from "react";
 
-export default function Footer() {
-  const [scrollY, setScrollY] = useState(0);
-  const footerRef = useRef(null);
+const Footer = () => (
+  <footer className="bg-gray-200 text-center p-8 font-kameron">
+    <div className="flex justify-around items-center mb-6">
+      <a href="/news" className="text-lg font-bold">
+        NEWS
+      </a>
+      <a href="/shop" className="text-lg font-bold">
+        SHOP
+      </a>
+      <a href="/contact" className="text-lg font-bold">
+        CONTACT
+      </a>
+      <a href="/partenaires" className="text-lg font-bold">
+        PARTENAIRES
+      </a>
+    </div>
+    <div className="flex justify-center mb-4 gap-2">
+      <a href="https://facebook.com">
+        <Image src="/img/facebook.svg" alt="Facebook" width={32} height={32} />
+      </a>
+      <a href="https://instagram.com">
+        <Image
+          src="/img/instagram-icon.svg"
+          alt="Instagram"
+          width={32}
+          height={32}
+        />
+      </a>
+    </div>
+    <p className="text-sm mb-2 font-kameron">
+      L'abus d'alcool nuit à la santé. -
+    </p>
+    <p className="text-sm mb-4 font-kameron">
+      © 2024 Floribière. Tous droits réservés.
+    </p>
+    <div className="flex justify-center grid-cols-3 gap-2">
+      <a href="/mentions-legales" className="text-xs">
+        Mentions légales
+      </a>
 
-  const handleScroll = () => {
-    const offsetY = window.scrollY;
-    setScrollY(offsetY);
-  };
+      <a href="/conditions-generales-de-vente" className="text-xs">
+        Conditions générales de vente
+      </a>
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+      <a href="/politique-de-confidentialite" className="text-xs">
+        Politique de confidentialité
+      </a>
+    </div>
+  </footer>
+);
 
-  return (
-    <footer
-      ref={footerRef}
-      className="relative h-64 flex flex-col justify-end items-center overflow-hidden"
-      style={{ backgroundColor: "#f8b400" }} // Couleur de la bière
-    >
-      <div
-        className="absolute bottom-0 left-0 w-full h-full transition-transform duration-300"
-        style={{
-          transform: `translateY(${Math.min(scrollY, 100)}px)`,
-          backgroundColor: "#f8b400", // Couleur de la bière, synchronisée avec le fond
-        }}
-      />
-      <div className="absolute bottom-0 left-0 w-full h-full"></div>
-      <div className="bubble-container">
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-      </div>
-
-      {/* <div className="relative z-10 text-center p-4">
-        <h2 className="text-2xl font-bold text-black">Merci de nous avoir visités !</h2>
-        <p className="text-black">Profitez bien de notre site et de nos produits.</p>
-      </div> */}
-    </footer>
-  );
-}
+export default Footer;
