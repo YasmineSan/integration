@@ -29,7 +29,7 @@ export default function ParallaxFooter() {
           muted
         />
         <div className="relative z-10 bg-red-500 bg-opacity-50 text-white p-6 flex justify-center items-center h-full">
-          <p className="text-3xl font-bold">
+          <p className="text-3xl font-bold text-center">
             Chez Floribière, nous étions loin d'imaginer l'aventure que pouvait
             représenter la création d'une bière au coquelicot. C'est au prix
             d'une remise en question permanente que nous progressons.
