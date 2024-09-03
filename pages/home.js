@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import BeerHighlight from "../components/BeerHighlight";
 import Hero from "../components/Hero";
+import BeerCarousel from "../components/BeerCarousel";
 
 export default function HomePage() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,18 +33,18 @@ export default function HomePage() {
         </h2>
       </div>
       <Hero />
-      <div className="p-4">
+      {/* <div className="p-4">
         <BeerHighlight
           beerName="Floribière -  Souvenir"
           imageUrl="\img\453505478_122186157674024765_6170764990246105489_n.jpg"
           gradientColors={["#FB0303", "#950202"]}
         />
-      </div>
+      </div> */}
     <BeerCarousel />
-      <div className="bg-blue-500 text-white p-6">
+      {/* <div className="bg-blue-500 text-white p-6">
         <h1 className="text-4xl font-bold">Welcome to My Static Homepage</h1>
         <p className="mt-4">This content is not editable through the CMS.</p>
-      </div>
+      </div> */}
       <Footer />
     </div>
   );

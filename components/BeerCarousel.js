@@ -18,17 +18,17 @@ const BeerCarousel = () => {
       gradientColors: ['#ffffff', '#000000'],
     },
     {
-      beerName: 'L’alternative',
+      beerName: "L’alternative",
       breweryName: 'Floribière',
-      imageUrl: '/img/Idée_1biere.png',
+      imageUrl: '/img/Idee1biere.png',
       gradientColors: ['#3D7C0C', '#BBBF03'],
     },
   ];
 
   return (
     <Swiper
-      spaceBetween={30}
-      slidesPerView={1}
+      spaceBetween={15}
+      slidesPerView={2}
       navigation
       pagination={{ clickable: true }}
       loop={true}
@@ -40,7 +40,7 @@ const BeerCarousel = () => {
             breweryName={beer.breweryName}
             imageUrl={beer.imageUrl}
             gradientColors={beer.gradientColors}
-            WidthCard="w-80" // Ajustez cette valeur selon vos besoins
+            WidthCard="w-full" //Largeur de la carte
           />
         </SwiperSlide>
       ))}
