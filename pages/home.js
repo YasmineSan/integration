@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import BeerHighlight from "../components/BeerHighlight";
 import BeerCard from "../components/BeerCard";
+import BeerCarousel from "../components/BeerCarousel";
 
 export default function HomePage() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +35,7 @@ export default function HomePage() {
           gradientColors={["#FB0303", "#950202"]}
         />
       </div>
-
+    <BeerCarousel />
       <div className="bg-blue-500 text-white p-6">
         <h1 className="text-4xl font-bold">Welcome to My Static Homepage</h1>
         <p className="mt-4">This content is not editable through the CMS.</p>
