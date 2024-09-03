@@ -14,6 +14,12 @@ module.exports = {
         'flori-dark-green': '#BBBF03',
         'flori-red': '#FB0303',
         'flori-dark-red': '#950202',
+        'coral': '#FF7F50',
+        'darkorange': '#FF4500',
+        'skyblue': '#87CEEB',
+        'steelblue': '#4682B4',
+        'blueviolet': '#8A2BE2',
+        'indigo': '#4B0082',
       },
       fontFamily: {
       kameron: ['Kameron', 'serif'],
