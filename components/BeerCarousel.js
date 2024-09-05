@@ -57,7 +57,7 @@ const BeerCarousel = () => {
       navigation={true}
       pagination={{ clickable: true }}
       autoplay={{
-        delay: 1500,
+        delay: 2000,
         disableOnInteraction: false,
       }}
       loop={true} // Effet infini
