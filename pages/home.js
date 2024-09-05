@@ -40,7 +40,7 @@ export default function HomePage() {
           gradientColors={["#FB0303", "#950202"]}
         />
       </div> */}
-    <BeerCarousel />
+      <BeerCarousel />
       {/* <div className="bg-blue-500 text-white p-6">
         <h1 className="text-4xl font-bold">Welcome to My Static Homepage</h1>
         <p className="mt-4">This content is not editable through the CMS.</p>
