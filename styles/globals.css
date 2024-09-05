@@ -9,7 +9,7 @@
     padding: 0%;
 }
 /* Les bulles de bières */
-.bubble-container {
+/* .bubble-container {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -132,7 +132,7 @@
       transform: translateY(-800px) rotate(60deg);
       opacity: 0;
     }
-  }
+  } */
   
   
   
