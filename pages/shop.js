@@ -3,16 +3,17 @@ import Navbar from "../components/Navbar";
 import BeerCard from "../components/BeerCard";
 import Hero2 from "../components/Hero2";
 import Shopping from "../components/Shopping";
+import Footer from "../components/Footer";
 
 export default function Shop() {
   return (
     <div className="">
       <Navbar />
       <Hero2 />
-      <img
+      {/* <img
         src="/img/top-view-beer-frame-with-copy-space.jpg"
         alt="Shop background"
-      />
+      /> */}
       <Shopping />
       {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <BeerCard
@@ -40,6 +41,7 @@ export default function Shop() {
           WidthCard="w-full"
         />
       </div> */}
+      <Footer />
     </div>
   );
 }

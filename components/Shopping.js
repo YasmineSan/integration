@@ -3,17 +3,17 @@ import React from "react";
 const ShoppingSection = () => {
   const products = [
     { id: 1, name: "Souvenir", price: "$7.00/day" },
-    { id: 2, name: "La petite Soeur", price: "$2.00/day" },
-    { id: 3, name: "L'alternative", price: "$22.00/day" },
-    { id: 4, name: "Fonds de boc", price: "$75.00/day" },
-    { id: 5, name: "Pisse au Lit", price: "$72.00/day" },
-    { id: 6, name: "L'épautrée", price: "$72.00/day" },
-    { id: 7, name: "La viollette", price: "$72.00/day" },
-    { id: 8, name: "La geranium comestible", price: "$72.00/day" },
+    { id: 2, name: "La petite Soeur", price: "$" },
+    { id: 3, name: "L'alternative", price: "$22.00" },
+    { id: 4, name: "Fonds de boc", price: "$75.00" },
+    { id: 5, name: "Pisse au Lit", price: "$72.00" },
+    { id: 6, name: "L'épautrée", price: "$72.00" },
+    { id: 7, name: "La violette", price: "$72.00" },
+    { id: 8, name: "La géranium comestible", price: "$72.00" },
   ];
 
   return (
-    <section className="p-8">
+    <section className="p-8 bg-black text-white">
       <h1 className="text-center text-3xl font-bold mb-4">SHOP</h1>
       <p className="text-center mb-8">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -25,13 +25,12 @@ const ShoppingSection = () => {
         {products.map((product) => (
           <div
             key={product.id}
-            className="border rounded-lg p-4 shadow-md text-center"
+            className="border border-gray-700 rounded-lg p-4 shadow-md text-center bg-gray-800"
           >
-            <div className="h-48 bg-gray-200 mb-4"></div>{" "}
-            {/* Image Placeholder */}
-            <h2 className="text-lg font-semibold">{product.name}</h2>
-            <p className="text-gray-500">{product.price}</p>
-            <button className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+            <div className="h-48 bg-gray-700 mb-4"></div> {/* Image Placeholder */}
+            <h2 className="text-lg font-semibold text-white">{product.name}</h2>
+            <p className="text-gray-300">{product.price}</p>
+            <button className="mt-4 bg-gray-600 text-black px-4 py-2 rounded hover:bg-gray-500">
               Dans le panier !
             </button>
           </div>
@@ -40,7 +39,7 @@ const ShoppingSection = () => {
 
       {/* Button to show more */}
       <div className="mt-8 flex justify-center">
-        <button className="bg-gray-300 text-gray-700 px-6 py-2 rounded">
+        <button className="bg-gray-600 text-gray-200 px-6 py-2 rounded hover:bg-gray-500">
           Show More
         </button>
       </div>
