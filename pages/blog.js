@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
+import Navbar from "../components/Navbar";
 
 export async function getStaticProps() {
   console.log("getStaticProps called");
@@ -58,58 +59,46 @@ export async function getStaticProps() {
 export default function BlogPage({ posts }) {
   return (
     <div>
-      <nav className="bg-gray-800 p-4">
-        <ul className="flex space-x-4">
-          <li>
-            <a href="/home" className="text-white">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="/blog" className="text-white">
-              Blog
-            </a>
-          </li>
-          <li>
-            <a href="/contact" className="text-white">
-              Contact
-            </a>
-          </li>
-          <li>
-            <a href="/something" className="text-white">
-              Something
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <Navbar />
 
       <div className="p-6">
         <h1 className="text-4xl font-bold mb-6">Blog</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="space-y-6">
           {posts.map(({ slug, frontmatter }) => (
             <div
               key={slug}
-              className="bg-white rounded-lg shadow-md overflow-hidden"
+              className="flex flex-col md:flex-row bg-white rounded-lg shadow-md overflow-hidden"
             >
+              {/* Image à gauche */}
               {frontmatter.image && (
-                <Image
-                  src={frontmatter.image}
-                  alt={frontmatter.title}
-                  width={400}
-                  height={250}
-                  className="object-cover w-full"
-                />
+                <div className="w-full md:w-1/3">
+                  <Image
+                    src={frontmatter.image}
+                    alt={frontmatter.title}
+                    width={400}
+                    height={250}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
               )}
-              <div className="p-4">
-                <h2 className="text-2xl font-semibold">
-                  <a
-                    href={`/blog/${slug}`}
-                    className="text-blue-500 hover:underline"
-                  >
-                    {frontmatter.title}
-                  </a>
+
+              {/* Texte à droite */}
+              <div className="p-4 w-full md:w-2/3 flex flex-col justify-center">
+                {/* Tags (hashtags) */}
+                <p className="text-sm text-gray-500">#{frontmatter.tags.join(' #')}</p>
+                <h2 className="text-2xl font-semibold mt-2">
+                  <Link href={`/blog/${slug}`}>
+                    <a className="text-blue-500 hover:underline">{frontmatter.title}</a>
+                  </Link>
                 </h2>
                 <p className="mt-2 text-gray-600">{frontmatter.summary}</p>
+
+                {/* Bouton "Consulter" */}
+                <button className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+                  <Link href={`/blog/${slug}`}>
+                    <a>Consulter</a>
+                  </Link>
+                </button>
               </div>
             </div>
           ))}
@@ -118,3 +107,4 @@ export default function BlogPage({ posts }) {
     </div>
   );
 }
+
